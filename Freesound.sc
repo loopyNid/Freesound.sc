@@ -211,6 +211,10 @@ FSSound : FSObj{
 		FSReq.new(Freesound.uri(\TEXT_SEARCH),params).get(action,FSPager);
 	}
 
+	*retrievePackSounds{|packid, action|
+		FSReq.new(Freesound.uri(\PACK_SOUNDS, packid)).get(action,FSPager);
+	}
+	
 	*contentSearch{|target, filter, params, action|
 		params = FSSound.initParams(params);
 		params.putAll(('target' : target, 'filter' : filter));

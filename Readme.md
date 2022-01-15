@@ -54,6 +54,20 @@ FSSound.getSound(31362, {|f|
     ~snd["name"].postln;
 });
 
+//Get pack by id example
+(
+FSSound.retrievePackSounds(packid:"19889", action: { |p|
+	~pack.do({|snd, i|
+		snd.retrieve("/tmp/",{
+			// ~buf = Buffer.read(s, "/tmp/" ++ snd.name);
+			// ("/tmp/" ++ ~snd.name).postln;
+			if(i == (~pack.results.size()-1)){
+				"DONE!".postln;
+			}
+		});
+	});
+});
+)
 
 // Metadata about the sound is loaded from the JSON response into a dictionary, and also accessible using object syntax
 ~snd.dict.keys;
@@ -137,4 +151,3 @@ FSSound.combinedSearch(query: "glitch", filter: "type:wav",
         ~snd.name.postln;
     }
 );
-
