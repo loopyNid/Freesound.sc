@@ -89,7 +89,7 @@ Freesound{
 			cmd = cmd ++ "&grant_type=authorization_code&code=%"
 		};
 		cmd = format(cmd, code);
-		cmd = cmd ++ "\" https://www.freesound.org/apiv2/oauth2/access_token/ >\"%\"";
+		cmd = cmd ++ "\" https://freesound.org/apiv2/oauth2/access_token/ >\"%\"";
 		cmd = format(cmd, tmpFile);
 		cmd.unixCmd({|res, pid|
 			var tokenObj = parseFunc.value(File(tmpFile,"r").readAllString);
