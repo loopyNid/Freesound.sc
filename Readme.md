@@ -57,11 +57,11 @@ FSSound.getSound(31362, {|f|
 //Get pack by id example
 (
 FSSound.retrievePackSounds(packid:"19889", action: { |p|
-	~pack.do({|snd, i|
+	p.do({|snd, i|
 		snd.retrieve("/tmp/",{
 			// ~buf = Buffer.read(s, "/tmp/" ++ snd.name);
 			// ("/tmp/" ++ ~snd.name).postln;
-			if(i == (~pack.results.size()-1)){
+			if(i == (p.results.size()-1)){
 				"DONE!".postln;
 			}
 		});
