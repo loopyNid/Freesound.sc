@@ -25,7 +25,6 @@ Freesound.getToken("<the_code_that_appeared_in_the_web_page>")
 (
 Freesound.clientId = "<your_client_id>";
 Freesound.clientSecret = "<your_client_secret>";
-Freesound.authType = "oauth2";
 Freesound.refreshToken;
 )
 

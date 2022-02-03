@@ -1,7 +1,7 @@
 Freesound{
 	classvar <uris;
 	classvar <>token;
-	classvar <>authType  = "token";
+	classvar <>authType  = "oauth2";
 	classvar <parseFunc;
 	classvar <>server;
 	classvar <>clientId;
