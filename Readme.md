@@ -69,6 +69,18 @@ FSSound.retrievePackSounds(packid:"19889", action: { |p|
 });
 )
 
+// example of downloading a sound
+
+// download sound
+(
+~snd.retrieve(Freesound.downloadDir, {
+    ~buf = Buffer.read(s, Freesound.downloadDir ++ ~snd.name);
+	(Freesound.downloadDir ++ ~snd.name).postln;
+    "done!".postln;
+});
+)
+
+
 // Metadata about the sound is loaded from the JSON response into a dictionary, and also accessible using object syntax
 ~snd.dict.keys;
 ~snd.name;
