@@ -1,16 +1,13 @@
-EXAMPLES
---------
+// EXAMPLES
+// --------
 
-```SuperCollider
+// ```SuperCollider
 Server.local.boot;
-// Token Authentication
-// https://www.freesound.org/docs/api/authentication.html#token-authentication
-// After obtaining the API key, this is the only thing you need to do for authenticating with the token method:
-
-Freesound.authType = "token";// default, only needed if you changed it
-Freesound.token="<your_api_key>";
 
 // Oauth2 Authentication
+// Note: This method gets uncompressed files, so it is needed for SC use.
+// If you use 'token' method, then you can only download mp3 - which is not
+// useful for scsynth.
 // https://www.freesound.org/docs/api/authentication.html#oauth2-authentication
 // Slightly more involved, here's the recommended procedure:
 // 1. Obtain the API key (note that old APIv1 keys will not work)
@@ -18,7 +15,6 @@ Freesound.token="<your_api_key>";
 
 Freesound.clientId="<your_client_id>";
 Freesound.clientSecret = "<your_client_secret>";
-Freesound.authType = "oauth2";
 Freesound.getAuthorizationPage
 
 // 3. Open the URL that shows in the post window in a web browser
