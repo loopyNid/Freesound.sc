@@ -8,7 +8,7 @@ Freesound{
 	classvar <>clientSecret;
 	classvar <>tokenFile;
 	classvar <defaultFields = "id,name,tags,username,license,previews";
-	classvar <>downloadDir;
+	classvar <downloadDir;
 
 	*parseJSON{|jsonStr|
 		var parsed = jsonStr;
@@ -24,6 +24,10 @@ Freesound{
 		^parsed.interpret;
 	}
 
+	*initDownloadDir{
+		this.donwloadDir = Platform.userExtensionDir ++ "/Freesound.sc/samples/";
+	}
+	
 	*initClass{
 		uris = (
 		\BASE :  "https://freesound.org/apiv2",
